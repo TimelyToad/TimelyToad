@@ -1,0 +1,39 @@
+word = 'person'
+spaces = ''
+for element in word:
+    spaces = spaces + ' '
+amount_letters = 0
+letter_place = 0
+check = True
+modified_guess = ''
+guess = input('What is your guess?')
+if guess in word:
+    for letter in word:
+        letter_place = letter_place + 1
+        amount_letters = amount_letters + 1
+        if letter == guess:
+            check = False
+        if check == False:
+            letter_place = letter_place - 1
+            opposite =  -1*(amount_letters - letter_place)
+    modified_guess = spaces[0:letter_place]+word[letter_place]+spaces[opposite:]
+    print(modified_guess)
+    for element in range(1, 11):
+        letter_place = 0
+        amount_letters = 0
+        check = True
+        guess = input('What is your guess?')
+        for letter in word:
+            letter_place = letter_place + 1
+            amount_letters = amount_letters + 1
+            if letter == guess:
+                check = False
+            if check == False:
+                letter_place = letter_place - 1
+                opposite = -1*(amount_letters - letter_place)
+        modified_guess = modified_guess[0:letter_place]+word[letter_place]+modified_guess[opposite:]
+        print(modified_guess)
+        s_word = word + ' '
+        if modified_guess == s_word:
+            print('You got it!')
+            break
