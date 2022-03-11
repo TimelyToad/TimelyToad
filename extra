@@ -1,0 +1,25 @@
+
+import random
+check_continue = input('Would you like to continue?')
+four_letter = random.choice([])
+print(four_letter)
+letter_set = []
+random_set = []
+count = 0
+random_word = ''
+if check_continue == 'yes':
+    for letter in four_letter:
+        letter_set.append(letter)
+    x = random.choice(letter_set)
+    random_set.append(x)
+    for number in range(1, 100000):
+        e = random.choice(letter_set)
+        if e not in random_set:
+            random_set.append(e)
+print(random_set)
+for letter in random_set:
+    random_word = letter + random_word
+print(random_word)
+
+
+
