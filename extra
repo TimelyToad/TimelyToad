@@ -21,5 +21,53 @@ for letter in random_set:
     random_word = letter + random_word
 print(random_word)
 
-
+amount_letters = 0
+letter_place = 0
+check = True
+opposite = 0
+modified_guess = ''
+guess = input('What is your guess?')
+if '+' in guess:
+    for letter in guess:
+        letter_place = letter_place + 1
+        amount_letters = amount_letters + 1
+        if letter == '+':
+            check = False
+        if check == False:
+            letter_place = letter_place - 1
+            opposite =  -1*(amount_letters - letter_place)
+    modified_guess = int(guess[0:letter_place])+int(guess[opposite:])
+if '-' in guess:
+    for letter in guess:
+        letter_place = letter_place + 1
+        amount_letters = amount_letters + 1
+        if letter == '-':
+            check = False
+        if check == False:
+            letter_place = letter_place - 1
+            opposite =  -1*(amount_letters - letter_place)
+    modified_guess = int(guess[0:letter_place])+int(guess[opposite:])
+if '*' in guess:
+    for letter in guess:
+        letter_place = letter_place + 1
+        amount_letters = amount_letters + 1
+        if letter == '*':
+            check = False
+        if check == False:
+            letter_place = letter_place - 1
+            opposite =  -1*(amount_letters - letter_place)
+        print(int(guess[0:letter_place]))
+        print(int(guess[opposite:]))
+    modified_guess = int(guess[0:letter_place])*int(guess[opposite:])
+if '/' in guess:
+    for letter in guess:
+        letter_place = letter_place + 1
+        amount_letters = amount_letters + 1
+        if letter == '/':
+            check = False
+        if check == False:
+            letter_place = letter_place - 1
+            opposite =  -1*(amount_letters - letter_place)
+    modified_guess = int(guess[0:letter_place])/int(guess[opposite:])
+print(modified_guess)
 
